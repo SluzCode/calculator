@@ -69,7 +69,7 @@ button {
     padding: 0;
     border: .25rem solid black;
     color: antiquewhite;
-    background-color:darkslategrey;
+    background-color:rgb(47, 79, 79);
     border-radius: 1rem;
     /* min-width: 4rem */
     /* margin: 1rem; */
@@ -102,3 +102,6 @@ button#decimal {
     /* width: max-content; */
 }
 
+button:hover {
+background-color: hsl(180, 25%, 35%);
+}
