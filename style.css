@@ -3,10 +3,6 @@ html {
     color: antiquewhite;
 }
 
-/* *{
-    border-radius: 1rem;
-} */
-
 body {
     display: flex;
     flex-direction: column;
@@ -23,26 +19,17 @@ body {
     align-items: flex-end;
     font-size: 4rem;
     padding: 2rem;
-    border-bottom: 1rem solid rgb(111, 64, 158) ;
     background-color:rgb(35, 110, 175);
-    margin-bottom: 1rem;
-    /* border: .25rem solid rgb(0, 0, 0); */
-    /* border-radius: 1rem; */
+    border-radius: 1rem;
 }
 
 .calculatorBody {
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    background-color: rgb(27, 83, 50);
+    background-color: rgb(111, 64, 158);
     min-width: 500px;
     border: 1rem solid rgb(111, 64, 158);
-    /* padding: 2rem; */
-    /* height: 2rem; */
-    /* width: 400px;
-    height: 10rem; */
-    /* flex: 1; */
-    /* justify-content: center; */
 }
 
 
@@ -53,8 +40,8 @@ body {
     gap: 1rem;
     margin-top: 1rem;
     border-radius: 1rem;
+    background-color: rgb(27, 83, 50);
     border: 1rem solid rgb(27, 83, 50);
-    border-top: 0;
 }
 
 
@@ -67,7 +54,7 @@ button {
     justify-content: center;
     align-items: center;
     padding: 0;
-    border: .25rem solid black;
+    /* border: .25rem solid black; */
     color: antiquewhite;
     background-color:rgb(47, 79, 79);
     border-radius: 1rem;
@@ -77,7 +64,8 @@ button {
 }
 
 button#zero {
-flex: 2;
+flex: 1;
+/* border: 0; */
 /* margin-right: 1rem; */
 }
 
