@@ -37,11 +37,19 @@ const keys = document.querySelectorAll('.key');
 let toScreen = [];
 const screen = document.querySelector('.screen');
 
+let input1 = null;
+let input2 = null;
+let output = null;
+let operator = null;
 
 
 window.addEventListener("keydown", (event) => {
     let display = screen.textContent;
-    console.log(event.code.slice(-1));
+    console.log(event.code);
+    
+    if (!isValidinput(event.code)){
+        return;
+    }
     toScreen = event.code.slice(-1);
     if (screen.textContent.length > 12) {
         return
@@ -53,3 +61,7 @@ window.addEventListener("keydown", (event) => {
 }
 )
 
+function isValidinput(input){
+   let output = input.includes("Digit")||input.includes("Numpad")
+   return output;
+}

@@ -61,6 +61,11 @@ button {
     border-radius: 1rem;
 }
 
+.operator {
+    background-color:hsl(0, 25%, 25%); 
+}
+
+
 button#zero {
 flex: 1;
 }
@@ -85,3 +90,7 @@ button#decimal {
 button:hover {
 background-color: hsl(180, 25%, 35%);
 }
+
+button.operator:hover {
+    background-color: hsl(10, 25%, 35%);
+    }
