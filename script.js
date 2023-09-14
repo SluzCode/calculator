@@ -34,9 +34,22 @@ function operate(input1, input2, operator) {
 }
 
 const keys = document.querySelectorAll('.key');
+let toScreen = [];
+const screen = document.querySelector('.screen');
+
+
 
 window.addEventListener("keydown", (event) => {
-  console.log(event.code.slice(-1));}
-  )
+    let display = screen.textContent;
+    console.log(event.code.slice(-1));
+    toScreen = event.code.slice(-1);
+    if (screen.textContent.length > 12) {
+        return
+    }
+    else {
+        screen.textContent = display + toScreen;
+        console.log(screen.textContent.length);
+    }
+}
+)
 
-const screen = document.querySelector('.screen');

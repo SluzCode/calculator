@@ -17,10 +17,13 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
+    align-content: stretch;
     font-size: 4rem;
     padding: 2rem;
     background-color:rgb(35, 110, 175);
     border-radius: 1rem;
+    height: 5rem;
+    max-width: 436px;
 }
 
 .calculatorBody {
