@@ -1,0 +1,67 @@
+
+When number key is pressed{
+pass number key value to array for screen
+update screen display by appending number to array
+
+look up adding number to array and then flattening array
+to string to pass to screen element
+
+}
+
+***remove percent and add Clear button next to All Clear***
+
+When operator key is pressed
+obtain screen string
+convert to number
+store as input
+
+if (operator == clear) && (screen has input) {
+        clear screen to correct error
+        return
+    else if (screen is clear)&& (operator == clear){ 
+        clear last operator
+        return
+     {
+    else if (no operator && screen clear){
+        do nothing
+    }
+    else if (operator == AC)
+        clear everything
+    }
+    else if (no input exists){
+        store screen as input 1
+    else if input 1 exists{
+        store screen as input 2
+        return
+        }
+    else if (both exist) && (input is operator) || (input is equal key){
+        apply operation
+        store output as input 1 and send to screen
+        clear input 2
+        return
+    }
+}
+    }
+
+
+function isValidInput(){
+    *use object here?
+
+    if input key is in object
+        apply it
+        return
+    else return
+}
+
+
+
+
+function sendToScreen()
+    get current screen as array
+    append number to said array
+    set screen to new array
+look up adding number to array and then flattening array
+to string to pass to screen element
+
+}
+
