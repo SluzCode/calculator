@@ -42,6 +42,7 @@ let input2 = null;
 let solution = null;
 let operator = null;
 let clearScreen = false;
+newInput = false;
 
 
 window.addEventListener("keydown", (event) => {
@@ -67,7 +68,11 @@ function isValidKeyInput(input) {
     return output;
 }
 
-
+function clearActiveOperator() {
+    operatorButtons.forEach((button) => {
+        button.classList.remove('active')
+    })
+}
 // Button event listeners
 
 // buttons is a node list. It looks and acts much like an array.
@@ -90,9 +95,10 @@ digitButtons.forEach((button) => {
         console.log(button.id);
 
         toScreen = button.id;
-        if ((operator && input1) && clearScreen){
+        if (((operator && input1) && clearScreen)||(newInput)) {
             screen.textContent = '';
             display = '';
+            newInput = false;
             clearScreen = false;
         }
 
@@ -119,30 +125,31 @@ digitButtons.forEach((button) => {
 
 operatorButtons.forEach((button) => {
 
-    
+
     button.addEventListener('click', () => {
         let display = screen.textContent;
         console.log(button.id);
 
-            
 
-if (display) {
+
+        if (display) {
+
             if (!operator) {
-            operator = button.id;
-            button.classList.add('active')
-            // console.log(button.classList)
+                operator = button.id;
+                button.classList.add('active')
+                // console.log(button.classList)
             }
-            
+
             if (input1 == null) {
                 input1 = +display;
                 clearScreen = true;
-            } 
-    
-            else if (input1) {
-                // input2 = +display
             }
-            
-            if (input1&&input2) {
+
+            else if (input1) {
+                input2 = +display
+            }
+
+            if (input1 && input2) {
                 solution = operate(input1, input2, operator);
                 console.log(solution)
                 screen.textContent = solution.toString();
@@ -150,40 +157,57 @@ if (display) {
                 input2 = null;
                 operator = button.id;
                 clearScreen = true;
-                button.classList.remove('active');
+                clearActiveOperator();
+                button.classList.add('active')
             }
-}
+        }
 
         console.log(input1)
 
     });
-    // button.addEventListener('click', function (e) {
-    //     e.target.style.background = 'lightblue';
-    // });
 });
+
+equals.addEventListener('click', function (e) {
+
+    let display = screen.textContent;
+    input2 = +display;
+
+    if (input1 && input2) {
+        solution = operate(input1, input2, operator);
+        console.log(solution)
+        screen.textContent = solution.toString();
+        input1 = null;
+        input2 = null;
+        operator = null;
+        clearScreen = true;
+        newInput = true;
+        clearActiveOperator();
+        }
+    });
 
 actionButtons.forEach((button) => {
 
-    
+
     button.addEventListener('click', () => {
         let display = screen.textContent;
         console.log(button.id);
         action = button.id;
-        
-        if (action=='ce') {
+
+        if (action == 'ce') {
             screen.textContent = '';
             input1 = null;
             input2 = null;
             solution = null;
             operator = null;
             clearScreen = false;
-            operatorButtons.forEach((button) => {
-                button.classList.remove('active')
-            })
-        } 
-        else if (action='c') {
+            newInput = false;
+            clearActiveOperator();
+        }
+        else if (action = 'c') {
             screen.textContent = '';
             operator = null;
+            newInput = false;
+            clearActiveOperator();
         }
 
         // console.log(input1)

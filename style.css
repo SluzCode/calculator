@@ -61,7 +61,8 @@ button {
     border-radius: 1rem;
 }
 
-.operator {
+.operator,
+#equals {
     background-color: hsl(0, 25%, 25%);
 }
 
