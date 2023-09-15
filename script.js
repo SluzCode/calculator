@@ -95,7 +95,7 @@ digitButtons.forEach((button) => {
         console.log(button.id);
 
         toScreen = button.id;
-        if (((operator && input1) && clearScreen)||(newInput)) {
+        if (((operator && input1) && clearScreen) || (newInput)) {
             screen.textContent = '';
             display = '';
             newInput = false;
@@ -107,6 +107,10 @@ digitButtons.forEach((button) => {
         }
         else if (toScreen == 'decimal') {
             if (!display.includes('.')) {
+                if (!display) {
+                    screen.textContent = '0.';
+                return;
+                }
                 screen.textContent = display + '.';
             }
         }
@@ -182,8 +186,8 @@ equals.addEventListener('click', function (e) {
         clearScreen = true;
         newInput = true;
         clearActiveOperator();
-        }
-    });
+    }
+});
 
 actionButtons.forEach((button) => {
 
@@ -203,11 +207,26 @@ actionButtons.forEach((button) => {
             newInput = false;
             clearActiveOperator();
         }
-        else if (action = 'c') {
-            screen.textContent = '';
-            operator = null;
+        else if (action == 'delete') {
+
+            if (!screen.textContent) {
+                input1 = null;
+                input2 = null;
+                operator = null;
+                clearActiveOperator();
+            }
+            screen.textContent = display.slice(0, -1);
+
             newInput = false;
-            clearActiveOperator();
+
+        }
+        else if (action == 'sign') {
+            if (display.charAt(0) == '-') {
+                screen.textContent = display.substring(1);
+            }
+            else {
+                screen.textContent = '-' + display;
+            }
         }
 
         // console.log(input1)
