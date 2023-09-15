@@ -20,7 +20,7 @@ body {
     align-content: stretch;
     font-size: 4rem;
     padding: 2rem;
-    background-color:rgb(35, 110, 175);
+    background-color: rgb(35, 110, 175);
     border-radius: 1rem;
     height: 5rem;
     max-width: 436px;
@@ -57,17 +57,17 @@ button {
     justify-content: center;
     align-items: center;
     color: antiquewhite;
-    background-color:rgb(47, 79, 79);
+    background-color: rgb(47, 79, 79);
     border-radius: 1rem;
 }
 
 .operator {
-    background-color:hsl(0, 25%, 25%); 
+    background-color: hsl(0, 25%, 25%);
 }
 
 
 button#zero {
-flex: 1;
+    flex: 1;
 }
 
 /* button#equal {
@@ -79,7 +79,7 @@ button#decimal {
     
     } */
 
-.rowStyle{
+.rowStyle {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -88,9 +88,14 @@ button#decimal {
 }
 
 button:hover {
-background-color: hsl(180, 25%, 35%);
+    background-color: hsl(180, 25%, 35%);
 }
 
 button.operator:hover {
     background-color: hsl(10, 25%, 35%);
-    }
+}
+
+
+.active {
+    background-color: hsl(10, 50%, 35%);
+}
