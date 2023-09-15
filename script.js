@@ -15,19 +15,16 @@ function divide(input1, input2) {
 }
 
 function operate(input1, input2, operator) {
+
     switch (operator) {
         case "+":
-            return add(input1, input2);
-            break;
+            return add(input1, input2).toFixed(3);
         case "-":
-            return subtract(input1, input2);
-            break;
+            return subtract(input1, input2).toFixed(3);
         case "*":
-            return multiply(input1, input2);
-            break;
+            return multiply(input1, input2).toFixed(3);
         case "/":
-            return divide(input1, input2);
-            break;
+            return divide(input1, input2).toFixed(3);
         default:
             break;
     }
@@ -42,7 +39,7 @@ let input2 = null;
 let solution = null;
 let operator = null;
 let clearScreen = false;
-newInput = false;
+let newInput = false;
 
 
 window.addEventListener("keydown", (event) => {
@@ -109,9 +106,10 @@ digitButtons.forEach((button) => {
             if (!display.includes('.')) {
                 if (!display) {
                     screen.textContent = '0.';
-                return;
                 }
-                screen.textContent = display + '.';
+                else {
+                    screen.textContent = display + '.';
+                }
             }
         }
 
