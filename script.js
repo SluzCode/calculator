@@ -18,13 +18,13 @@ function operate(input1, input2, operator) {
 
     switch (operator) {
         case "+":
-            return add(input1, input2).toFixed(3);
+            return add(+input1, +input2).toFixed(3);
         case "-":
-            return subtract(input1, input2).toFixed(3);
+            return subtract(+input1, +input2).toFixed(3);
         case "*":
-            return multiply(input1, input2).toFixed(3);
+            return multiply(+input1, +input2).toFixed(3);
         case "/":
-            return divide(input1, input2).toFixed(3);
+            return divide(+input1, +input2).toFixed(3);
         default:
             break;
     }
@@ -175,7 +175,7 @@ equals.addEventListener('click', function (e) {
     input2 = +display;
 
     if (input1 && input2) {
-        solution = operate(input1, input2, operator);
+        solution = operate(+input1, +input2, operator);
         console.log(solution)
         screen.textContent = solution.toString();
         input1 = null;

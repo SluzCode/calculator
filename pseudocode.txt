@@ -65,3 +65,7 @@ to string to pass to screen element
 
 }
 
+code rework:
+
+maybe just have input2 update continuously with each button press once input one has been set
+
